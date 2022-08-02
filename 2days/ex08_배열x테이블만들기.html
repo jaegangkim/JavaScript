@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let subNum=Number(prompt("과목 수 입력"));
+        let subName=[];
+        let subScore=[];
+        let sum=0,avg=0;
+        for(let i =0;i<subNum;i++){
+            subName[i]=prompt("과목 명 입력")
+        }
+        for(let i =0;i<subNum;i++){
+            subScore[i]=Number(prompt(subName[i]+"의 점수 입력"))
+            sum+=subScore[i];
+        }
+        avg=sum/subNum;
+        //console.log(sum+" "+avg)
+        document.write('<table border="1px solid black">')
+        document.write('<tr>')
+            for(let i =0;i<subNum;i++){
+            document.write('<td>'+subName[i]+'</td>')
+        }
+        document.write('<td>총합</td>')
+        document.write('<td>평균</td>')
+        document.write('</tr>')
+
+        document.write('<tr>')
+            for(let i =0;i<subNum;i++){
+            document.write('<td>'+subScore[i]+'</td>')
+        }
+        document.write('<td>'+sum+'</td>')
+        document.write('<td>'+avg+'</td>')
+        document.write('</tr>')
+
+        document.write("</table>")
+    </script>
+</body>
+</html>

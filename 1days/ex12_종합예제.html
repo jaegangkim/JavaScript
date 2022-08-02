@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. java, python, web 점수 입력
+        // 2. 평균 등급 설정
+        let java=parseInt(prompt("java : ")),python=parseInt(prompt("파이썬 : ")),web=parseInt(prompt("web : "))
+        let totalScore=(java+python+web)
+        let avgScore=(totalScore/3).toFixed(2)
+        console.log(avgScore)
+        let grade;
+        if(avgScore>=90){
+            grade="A"
+        }else if(avgScore>=80){
+            grade="B"
+        }else if(avgScore>=70){
+            grade="C"
+        }else{
+            grade="F"
+        }
+        document.write("평균은 ",avgScore,"점이고 등급은 ",grade,"입니다...")
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let week=["월","화",'수',"목","금","토"];
+        // 6번째 인덱스 '일' 추가
+        week[6] = "일";
+        console.log(week);
+        // 값 추가
+        let foodlist=["고기","떡볶이","김밥","라면"];
+        foodlist[4]="스파게티";
+        foodlist.push("짜장면"); //
+        console.log(foodlist)
+        // 배열 마지막 값을 반환 후 삭제
+        console.log(foodlist.pop());
+        // 배열에 있는 데이터 슬라이싱
+        console.log(foodlist.slice(1,4));
+        // 슬라이싱+pop  splice(시작지점,개수)
+        console.log(foodlist.splice(1,2));
+        
+    </script>
+</body>
+</html>

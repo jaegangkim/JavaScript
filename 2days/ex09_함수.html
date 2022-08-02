@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // js함수의 특징
+        // 1. 데이터 타입 검사x
+        // 2. 매개변수와 입력값 개수가 같은 지 확인x
+        // 3. 매개변수의 개수보다 입력값이 적으면 undefine값이 들어감
+        // 4. 재사용성, 중복되는 코드 최소화, 유지보수 수정 용이
+        function greeting(){
+            console.log("안녕!")
+        }
+        greeting();
+        // 매개변수를 통한 기능 출력 함수
+        function addNum(num1,num2){
+            console.log("두 수의 합은 "+(num1+num2))
+        }
+        addNum(2,3)
+        function minusNum(num1,num2){
+            return num1-num2
+        }
+        console.log(minusNum(5,3))
+    </script>
+</body>
+</html>

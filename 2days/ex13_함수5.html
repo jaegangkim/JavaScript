@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--함수 인라인 방식-->
+    <button onclick="add(2,3,4)">더하기</button>
+    <script>
+        function add(...args){
+            let sum=0;
+            for(let i=0;i<args.length;i++){
+                sum+=args[i];
+            }
+            alert(sum)
+        }
+    </script>
+</body>
+</html>
