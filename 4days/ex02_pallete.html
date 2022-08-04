@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/pallete.css">
+</head>
+
+<body>
+    <h1>팔레트</h1>
+    
+    <div id="palette">
+        <div class="box red" data-color="red"></div>
+        <div class="box orange" data-color="orange"></div>
+        <div class="box yellow" data-color="yellow"></div>
+        <div class="box green" data-color="green"></div>
+        <div class="box blue" data-color="blue"></div>
+    </div>
+
+    <h1>색깔 적용결과 </h1>
+    <div id="box"></div>
+    <script>
+        let box = document.getElementById("box");
+        let colors = document.getElementById("palette").children;
+        //요소객체명.addEventListener('이벤트명' , function(){실핼문장})
+        for(let i=0;i<colors.length;i++){
+            colors[i].addEventListener('click',function(){
+            // 속성값 가져오기
+            box.style.backgroundColor = this.getAttribute("data-color");
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>

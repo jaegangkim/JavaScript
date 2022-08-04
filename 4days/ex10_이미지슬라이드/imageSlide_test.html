@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="imageSlide.css">
+</head>
+<body>
+	<div id="img">
+		<input type="button" id="btn1" class="btn pre" value="<">
+		<input type="button" id="btn2" class="btn next" value=">">
+	</div>
+
+	<!-- script -->
+	<script>
+		let img=document.querySelector('#img')
+		let preBtn=document.querySelector(".pre")
+		let nextBtn=document.querySelector(".next")
+		let fileNm=1;
+		preBtn.addEventListener('click',preImg)
+		nextBtn.addEventListener('click',nextImg)
+		setInterval(nextImg,1500);
+		function preImg(){
+			fileNm=(fileNm==1)?14:fileNm-1
+			img.style.backgroundImage='url(img/'+fileNm+'.jpg)'
+		}
+		function nextImg(){
+			fileNm=(fileNm==14)?1:fileNm+1
+			img.style.backgroundImage='url(img/'+fileNm+'.jpg)'
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        img{ 
+            width: 400px;  
+            height: 300px;  
+        }  
+    </style>
+</head>
+<body>
+    <img src="https://i.pinimg.com/originals/60/00/35/600035c0e351085fced5e3473da3a147.jpg" 
+    id="img1"/>
+    <br>
+    <button onclick="ch()">이미지 변경</button>
+    <script>
+        let male = "https://i.pinimg.com/originals/60/00/35/600035c0e351085fced5e3473da3a147.jpg";
+        let female = "https://blog.kakaocdn.net/dn/bezjux/btqCX8fuOPX/6uq138en4osoKRq9rtbEG0/img.jpg";
+        function ch(){
+            let img1 = document.getElementById("img1")
+            if(img1.src==male){
+                img1.src=female;
+            }else{
+                img1.src=male;
+            }
+        }
+    </script>
+</body>
+</html>

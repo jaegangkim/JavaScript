@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배경과 글자색 변경하기</h1>
+    <p>Dom은 웹문서를 접근 할 수 있도록 정의 해놓은 표준</p>
+    <form>
+        <input type="button" value="검정배경 빨간색글씨" onclick="change('black','red')">
+        <input type="button" value="초록배경 빨간색글씨" onclick="change('green','red')">
+        <input type="button" value="노랑배경 파랑글씨" onclick="change('yellow','blue')">
+        <input type="button" value="흰색배경 검정글씨" onclick="change('white','black')">
+    </form>
+    <script>
+        function change(bgcolor,txtcolor){
+            document.bgColor=bgcolor;
+            document.fgColor=txtcolor;
+
+        }
+    </script>
+</body>
+</html>

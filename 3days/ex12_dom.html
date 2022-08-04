@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="span1">0</span><br>
+    <button onclick="plus()">+1</button>
+    <button onclick="minus()">-1</button>
+    <script>
+        let num = document.getElementById("span1")
+        function plus(){
+            num.innerHTML++;   //++은 자동형변환
+        }
+        function minus(){
+            if(num.innerHTML>0) num.innerHTML--;
+        }
+    </script>
+
+</body>
+</html>

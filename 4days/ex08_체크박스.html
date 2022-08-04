@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        김밥<input type="checkbox" name="food" value="김밥">
+        라면<input type="checkbox" name="food" value="라면">
+        오뎅<input type="checkbox" name="food" value="오뎅">
+    </form>
+    <script>
+        let foodlist = document.getElementsByName("food")
+        for(let i=0;i<foodlist.length;i++){
+            console.log(foodlist[i].value)
+        }
+    </script>
+</body>
+</html>

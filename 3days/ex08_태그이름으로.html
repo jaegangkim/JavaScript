@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>클릭</button>
+    <div id="text"></div>
+    <script>
+        // 1. div태그 가져와서 객체로 반환
+        let div=document.getElementById("text");
+        // 2. 버튼 태그 가져오기 querySelector("선택자")
+        let btn = document.querySelector("button")
+        // 3. 버튼 태그 클릭 했을 때 글자 추가
+        btn.onclick=function(){
+            div.innerHTML+="jaegang<br>"
+        }
+        
+    </script>
+</body>
+</html>
