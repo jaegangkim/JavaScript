@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1 id="title">스터디 회원 모집</h1>
+    <p id="trigger">자세한 내용을 보려면 클릭!</p>
+    <div id="detail"></div>
+    <script>
+        $(function(){
+         $("#trigger").click(function(){
+            $("#detail").html('<p>스터디주제 : 자바스크립트</p><p>대상 : 인공지능사관학교</p>')
+            $('h1').text('js 회원 모집')
+         })
+         let $txt = $('h1').text()
+         console.log($txt)
+        })
+    </script>
+</body>
+</html>

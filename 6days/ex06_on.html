@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form action="">
+        <input type="text">
+        <input type="button" value="클릭">
+    </form>
+    <script>
+        $(function(){
+            // 버튼을 클릭했을 때 콘솔창에 "이벤트 실행!!" 출력
+            // js: addEventListener( ,콜백함수)
+            // jq: on(이벤트종류,콜백함수)
+            // on(' ',()=>{ }) 또는 on(' ',function(){ }) 
+            $('input[type="button"]').on('click',()=>{
+                console.log("이벤트 실행!!");
+                // val() : 입력요소 읽어오기
+                let $val = $('input[type="text"]').val()
+                alert($val)
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DOM - Create & Add Node</title>
+	<link rel="stylesheet" href="css/nameList.css">
+</head>
+<body>
+	<div id="container">
+		<h1>SM수강 신청</h1>
+		<form action="" onsubmit="return false;">
+			<input type="text" id="userName" placeholder="이름" required>
+			<button>신청</button>
+		</form>
+		<hr>
+		<div id="nameList"></div>
+    </div>
+	<script>
+		let userName=document.querySelector("#userName")
+		let nameList=document.querySelector("#nameList")
+		let btn=document.querySelector("button")
+		
+		btn.addEventListener('click',function(){
+			let new_p=document.createElement("p")
+			let new_txt=document.createTextNode(userName.value)
+			nameList.insertBefore(new_p,nameList.childNodes[0])
+			// new_p.innerHTML+=userName.value
+			new_p.appendChild(new_txt)
+			userName.value = "";
+		})
+
+	</script>
+</body>
+</html>

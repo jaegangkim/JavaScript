@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text" name="txtName1" class="txt1" value="테스트1"><br>
+    <input type="text" class="txt2" value="테스트2">
+    <script>
+        $(function(){
+           let txt1 = $(".txt1").val()
+           let txt2 = $(".txt2").val()
+           console.log(txt1,txt2);
+
+           // txtNama1값 출력
+           console.log($('input[name="txtName1"]').val())
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>apple</li>
+    </ul>
+    <script>
+        let list = document.getElementById("list")
+        // 1. 요소 생성
+        let li = document.createElement("li")
+        let txt = document.createTextNode("banana")
+        li.appendChild(txt)
+        list.appendChild(li)
+        // list.innerHTML+="<li>ddd</li>" 이래도 될..듯?
+        let first_li=document.querySelector("ul li")
+        list.removeChild(first_li)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js" integrity="sha512-jKxp7JHEN6peEmzmg6a7XJBORNTB0ITD2Pi+6FUkc16PCaNAJX2ahZ1ejn1p1uY37Pxyirn/0OMNZbITbEg3jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <style>
+        .txt{
+        background-color: grey;
+        font-size: 1.5em;
+        color:white;
+        font-weight: bold;
+        cursor: pointer; /*마우스커서모양*/
+        } </style>
+</head>
+<body>
+    <button id="createBtn"> 내용추가 </button>
+    <button id="designBtn"> 디자인적용 </button>
+    <button id="removeBtn1"> 디자인삭제 </button>
+    <button id="removeBtn2"> 내용삭제 </button>
+    <div id="contents"></div>
+    <script>
+        $(function(){
+            //내용추가:'내용추가'웹페이지에 출력
+            $('#createBtn').click(function(){
+                $("#contents").append('<p>내용추가</p>')
+            })
+            $('#designBtn').click(function(){
+                $("p").addClass('txt')
+            })
+            $('#removeBtn1').click(function(){
+                $("p").removeClass('txt')
+            })
+            $('#removeBtn2').click(function(){
+                $("#contents").empty()
+            })
+        })
+    </script>
+</body>
+</html>

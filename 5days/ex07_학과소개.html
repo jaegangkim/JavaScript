@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        a, a:visited {
+            text-decoration:none;            
+            color:black;
+        }
+        .mainMenu {
+            width:200px;
+            height:30px;
+            margin:0;
+            border:1px solid black;
+            text-align:center;
+            background:#ffc740;  
+        }
+        .mainMenu:hover {
+            background:#ff6a00;
+            color:white;
+        }
+        .subMenu {
+            position:absolute;
+            margin-left:15px;
+            margin-top:5px;
+            border-collapse:collapse;
+			visibility:hidden;
+        }
+        .subMenu td {
+            border:1px solid black; 
+            padding:5px;     
+            border-collapse:collapse;    
+            background:white;
+            color:black;
+         }
+        .subMenu td:hover {
+            background:#ffceb2;
+            }
+    </style>
+    <title>메뉴 만들기</title>
+	<script>
+        function showSub(subname){
+            let sub= document.getElementById(subname)
+            sub.style.visibility="visible"
+        }
+        function hideSub(subname){
+            let sub= document.getElementById(subname)
+            sub.style.visibility="hidden"
+        } 
+	</script>
+</head>
+<body>
+    <h1>눈에 띄는 메뉴 만들기</h1>
+    <table>
+        <tr>
+            <td  class="mainMenu" onmouseover="showSub('sub1')" onmouseout="hideSub('sub1')">학과 소개
+                <table class="subMenu" id="sub1">
+                    <tr>
+                        <td class="sub"><a href="#">개요</a></td>
+                        <td class="sub"><a href="#">인사말</a></td>
+                        <td class="sub"><a href="#">학생회</a></td>
+                        <td class="sub"><a href="#">찾아오시는 길</a></td>
+                    </tr>
+                </table>
+            </td>
+            <td  class="mainMenu" onmouseover="showSub('sub2')" onmouseout="hideSub('sub2')">학사 안내
+                <table class="subMenu" id="sub2">
+                    <tr>
+                        <td><a href="#">교과과정</a></td>
+                        <td><a href="#">강의시간표</a></td>
+                        <td><a href="#">세미나 안내</a></td>
+                    </tr>                                        
+                </table>
+            </td>
+            <td  class="mainMenu" onmouseover="showSub('sub3')" onmouseout="hideSub('sub3')">학과 활동
+                <table class="subMenu" id="sub3">
+                    <tr>
+                        <td><a href="#">학과 MT</a></td>
+                        <td><a href="#">체육대회</a></td>
+                        <td><a href="#">학과내 동아리</a></td>
+                    </tr>    
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+​
+</html>

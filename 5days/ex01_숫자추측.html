@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>숫자 추측 게임</h1>   
+    <p>  1부터 100까지의 숫자 중에서 하나의 숫자를 뽑았습니다.<br />  당신이 추측할 수 있는 기회는 10번 입니다.<br />  추측한 숫자가 높다거나 낮다는 아래에서 표시됩니다.<br />  </p>  
+     <form action="">  
+        <input type="text" id="answer" /> 
+        <input type="button" value="추측" onclick="compareNumber()"/>  
+    </form>   
+        <p id="before_result">이전 결과:</p>  
+        <p id="result"></p>
+
+    <script>
+        // 1~10까지 랜덤 수를 생성(matn.random())
+        // 업다운 진행, 기회10번, 다 쓰면 버튼 비활성화
+        // span으로 내용 출력
+        // 입력한 오답 출력
+        let rn = parseInt(Math.random()*10+1)
+        let answer = document.getElementById("answer")
+        let btn = document.querySelector("input[type=button]")
+        let before_result = document.getElementById("before_result")
+        let result = document.getElementById("result")
+        let count = 1
+
+        // btn.addEventListener("click",compareNumber)
+
+        function compareNumber(){
+            let num=parseInt(answer.value)
+            answer.value=null
+            if(num===rn){
+                result.innerHTML='<span>정답입니다😊</span>'
+                before_result.innerHTML+=(" "+num+"!")
+                btn.disabled=true;
+            }else if(num<rn){
+                result.innerHTML='<span>up</span>'
+                before_result.innerHTML+=(" "+num)
+            }else{
+                result.innerHTML='<span>down</span>'
+                before_result.innerHTML+=(" "+num)
+            }
+            count++
+            if(count==11){
+                btn.disabled=true;
+                result.innerHTML='<span>실패</span>'
+            }
+        }
+    </script>
+</body>
+</html>
