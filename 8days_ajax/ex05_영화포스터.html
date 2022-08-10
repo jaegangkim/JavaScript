@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        #movieList{
+        display: flex;
+        flex-wrap:wrap;
+        /* 줄바꿈자동 */
+        width: 1100px;
+        /* 이미지하나당 220px*5 */
+        height: 500px;
+        justify-content:space-around;
+        }
+        .movie-info{
+        position:relative;
+        width: 200px;
+        height: 400px;
+        overflow: hidden;
+        /* 모서리 둥글게 border-radius */
+        border-radius: 15px;
+        box-shadow:5px 5px 5px rgb(43,42,42);
+        /* x축 y축 흐림 값을 주면 오른쪽 하단에 검정색 */
+        margin-bottom: 20px;
+        }
+        .movie-info> img{
+        width: 300px;
+        position: absolute;
+        /* 이미지위로 올리기 조절 */
+        top:50%;
+        left: 50%;
+        margin: -150px 0 0 -150px;
+        }
+        /* 이미지에 마우스를 올렸을때 div.info요소의 display를 flex로지정 */
+        .movie-info>img:hover + div.info{
+        display: flex;
+        }
+        .movie-info>.info{
+        display: flex;
+        position: absolute;
+        width: 220px;
+        height: 400px;
+        background-color: rgb(50, 50, 50,0.5);
+        /* rgb(X,X,X,투명도값) */
+        flex-direction: column;
+        justify-content: space-around; /* 간격을 균등하게 */
+        text-align: center;
+        }
+        .info >span{
+        color:white;
+        font-size: 1.1em; /*부모요소의글자크기 따라가기 1em은 16px */
+        }
+        </style>
+</head>
+<body>
+    <div id="movieList">
+    </div><br>
+    <button id="open">영화정보보기</button>
+    <script>
+        $(function(){
+            $("#open").click(()=>{
+                $.ajax({
+                    type : "get",
+                    url : "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20220801",
+                    success : function(movieInfo){
+                        let posterUrl = [
+                            "https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg",
+                            "https://movie-phinf.pstatic.net/20220720_283/1658284839003UzxoT_JPEG/movie_image.jpg",
+                            "https://movie-phinf.pstatic.net/20220509_176/1652081912471yhg3N_JPEG/movie_image.jpg",
+                            "https://movie-phinf.pstatic.net/20220622_63/165588851818770zWk_JPEG/movie_image.jpg",
+                            "https://movie-phinf.pstatic.net/20220708_75/16572722362230AyHS_JPEG/movie_image.jpg",
+                            "https://movie-phinf.pstatic.net/20220607_129/16545872892918GA4h_JPEG/movie_image.jpg",
+                            "https://movie-phinf.pstatic.net/20220704_246/16569027452369rlGb_JPEG/movie_image.jpg",
+                            "https://movie-phinf.pstatic.net/20220718_224/1658121739465fgRof_JPEG/movie_image.jpg",
+                            "https://movie-phinf.pstatic.net/20220805_227/1659685387586PIORG_JPEG/movie_image.jpg",
+                            "https://movie-phinf.pstatic.net/20220706_263/1657071698045SKrKH_JPEG/movie_image.jpg"
+                        ];
+                        let movieList = movieInfo.boxOfficeResult.dailyBoxOfficeList;
+                        movieList.forEach((item, index) => {
+                            $("#movieList").append(`<div class="movie-info">
+                                                    <img src="${posterUrl[index]}">
+                                                    <div class="info">
+                                                    <span>순위 : ${item.rank}</span>
+                                                    <span>영화제목 : ${item.movieNm}</span>
+                                                    <span>개봉일 : ${item.openDt}</span>
+                                                    </div></div>`)
+                        });
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

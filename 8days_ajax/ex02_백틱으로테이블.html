@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <button>영화정보보기</button>
+    <div id="pp"></div>
+    <script>
+        // 백틱 사용법
+        // greet('김재강');
+        // function greet(name){
+        //     console.log(`안녕하세요 저는 ${name}입니다`);
+        //     document.write(`<h1>${name}</h1>`)
+        // }
+        
+        
+       $(function(){
+        $("button").click(()=>{
+            $.ajax({
+                url:'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20220801', 
+                success:(res)=>{
+                   let str=`<table border="1">`
+                    str+=`<tr>`
+                    str+=`<td>순위</td>`
+                    str+=`<td align="center">영화제목</td>`
+                    str+=`<td align="center">개봉일자</td>`
+                    str+=`</tr>`
+                    let lis=res.boxOfficeResult.dailyBoxOfficeList
+                    lis.forEach((item) => {
+                        str+=`<tr><td>${item.rank}</td><td>${item.movieNm}</td><td>${item.openDt}</td></tr>`
+                    });
+                    str+=`</table>`
+                    $("#pp").prepend(str)
+                },
+                error:function(){
+                    alert("실패")
+                }
+                
+            })
+            
+        })
+       })
+    </script>
+</body>
+</html>
