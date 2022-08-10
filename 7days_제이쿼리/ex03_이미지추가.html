@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        div>img {
+        width: 200px;
+        height: 200px;
+        }
+        .c1 {
+        border: 3px solid chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="01.png" id="img1">
+    </div>
+    <button id="btn1">div내부 앞에 추가</button>
+    <button id="btn2">div내부 뒤에 추가</button>
+    <button id="btn3">div외부 앞에 추가</button>
+    <button id="btn4">img 1개 삭제</button>
+    <button id="btn5">div 안 비우기</button>
+    <button id="btn6">class 추가</button>
+    <button id="btn7">class 삭제</button>
+    <button id="btn8">부모요소 접근</button>
+
+    <script>
+        $(function(){
+            $('#btn1').click(()=>{
+                $("div").prepend('<img src=02.png>')
+            })
+            $('#btn2').click(()=>{
+                $("div").append('<img src=03.png>')
+            })
+            $('#btn3').click(()=>{
+                $("div").before('<button id="newbtn">새버튼</button>')
+            })
+            $("#btn4").click(function(){
+                $('#img1').remove()
+            })
+            $("#btn5").click(function(){
+                $('div').empty()
+            })
+            $("#btn6").click(function(){
+                $('img').addClass('c1')
+            })
+            $("#btn7").click(function(){
+                $('img').removeClass('c1')
+            })
+            $("#btn8").click(function(){
+                $('img').parent().css('background-color','pink')
+            })
+        })
+    </script>
+
+</body>
+</html>

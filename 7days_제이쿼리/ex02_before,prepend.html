@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <div id="layer1">
+        <h2>첫번째 레이아웃 </h2>
+    </div>
+    <div id="layer2">
+        <h2>두번째 레이아웃 </h2>
+    </div>
+    <div id="layer3">
+        <h2>세번째 레이아웃 </h2>
+    </div>
+    <script>
+        
+        $(function(){
+            let html='<div><h1>삽입된 레이아웃</h1></div>'
+            let html2='<div><h1>삽입된 레이아웃2</h1></div>'
+            $("#layer2").before(html) //요소의 이전위치에 삽입됨
+            $("#layer2").after(html) //요소의 다음 위치에 삽입됨
+            $("#layer2").prepend(html2) //자식노드 제일 위에 삽입
+            $("#layer2").append(html2) //자식노드 마지막에 삽입
+            
+        })
+    </script>
+
+</body>
+</html>

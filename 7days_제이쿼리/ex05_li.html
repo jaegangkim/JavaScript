@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <ul class="fruits">
+        <li>바나나</li>
+        <li>딸기</li>
+        <li>수박</li>
+        <li>키위</li>
+        <li>오렌지</li>
+        <li>복숭아</li>
+    </ul>
+    <script>
+        $(function(){
+           console.log($('li:first').html());
+           console.log($('li:last').html());
+           console.log($('li:even'));
+           $('li:odd').css('color','blue');
+           $('li:nth-child(2n-1)').css('color','red');
+        })
+    </script>
+
+</body>
+</html>

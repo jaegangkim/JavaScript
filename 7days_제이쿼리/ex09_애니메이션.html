@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <!-- <button id="btn1">버튼클릭</button>
+    <div id="ani_div"></div> -->
+    <div>애니메이션 효과주기</div>
+    <script>
+        $(function(){
+            $('div').css("font-size","50px").css('border','0px dotted skyblue')
+            .animate({'border-width':'100px'},1000)
+            .animate({'border-width':'10px'},1000)  
+            //애니메이션 효과 주기
+            // $("#btn1").click(()=>{
+            //     let div1 = $("#ani_div");
+            //     div1.animate({height:'300px',opacity:'0.4'},'slow')
+            //     div1.animate({width:'300px',opacity:'0.7'},'slow')
+            //     div1.animate({height:'100px',opacity:'0.4'},'slow')
+            //     div1.animate({width:'100px',opacity:'0.7'},'slow')
+            // })
+        })
+    </script>
+
+</body>
+</html>

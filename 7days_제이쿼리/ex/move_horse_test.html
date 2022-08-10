@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/moveImgStyle.css" />
+    <script src="jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="bg">
+      <img id="horse" src="img/horse.png" />
+      <button class="btn left">LEFT</button>
+      <button class="btn right">RIGHT</button>
+    </div>
+    <script>
+      $(function(){
+        let num=0;
+        $(".btn.left").on('click',function(){
+          num+=50;
+          $("#horse").css('right',num)
+        })
+
+        $(".btn.right").on('click',function(){
+          if(num>0){
+            num-=50;
+            $("#horse").css('right',num+'px')
+          }
+        })
+
+        //keydown이벤트
+        // 방향키 왼쪽:37 위:38 오른쪽:39 아래:40
+        $("body").on('keydown',function(event){
+          if(event.keyCode==37){
+            if(num<1180){
+              num+=50;
+              $("#horse").css('right',num)
+            }
+          }
+          if(event.keyCode==39){
+            if(num>0){
+              num-=50;
+              $("#horse").css('right',num)
+            }
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

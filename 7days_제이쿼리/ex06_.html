@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <input type="text" id="txt1" value="text1"/> <br/>
+    <input type="hidden" id="hdn1" value="hidden1"/> <br/>
+    <select id="slct1">
+        <option value="select1">셀렉트1</option>
+        <option value="select2">셀렉트2</option>
+        <option value="select3">셀렉트3</option>
+    </select>
+    <script>
+        $(function(){
+            //id txt1,hdn1,slct1 값 출력
+            console.log($('#txt1').val());
+            console.log($('#hdn1').val());
+            console.log($("slct1"));
+
+        })
+    </script>
+
+</body>
+</html>

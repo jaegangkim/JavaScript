@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+​
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery 기초</title>
+    <style>
+        button {
+            margin-left:50px;
+            margin-top:30px;
+            padding:5px;
+            border:1px solid black;
+        }
+        #myBall {
+            margin-left:70px;
+            margin-top:50px;
+        }
+         button:hover {
+            cursor:pointer;
+        }
+    </style>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1> 당신이 좋아하는 스포츠는?</h1>
+        <button id="ball1">프로축구</button>
+        <button id="ball2">프로야구</button>
+        <button id="ball3">프로농구</button>
+    <div id="myBall">    </div>
+    <script>
+        $(function(){
+          //버튼 누르면 공 생성
+          $('#ball1').click(()=>{
+            $("div").html("<img src='ball1.jpg'>")
+          })  
+          $('#ball2').click(()=>{
+            $("div").html("<img src='ball2.jpg'>")
+          })  
+          $('#ball3').click(()=>{
+            $("div").html("<img src='ball3.jpg'>")
+          })  
+        })
+    </script>
+</body>
+</html>
